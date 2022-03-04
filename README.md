@@ -1,5 +1,3 @@
-# job4j_kotlin_web
-
 [![Build Status](https://travis-ci.com/Sir-Hedgehog/job4j_kotlin_web.svg?branch=master)](https://travis-ci.org/Sir-Hedgehog/job4j_kotlin_web)
 
 # Web application job4j_kotlin_web
