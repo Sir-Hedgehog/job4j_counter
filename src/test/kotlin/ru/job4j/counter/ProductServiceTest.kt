@@ -3,11 +3,10 @@ package ru.job4j.counter
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
+import org.mockito.InjectMocks
+import org.mockito.Mock
 import org.mockito.junit.jupiter.MockitoExtension
 import org.mockito.kotlin.given
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.boot.test.mock.mockito.MockBean
 import ru.job4j.counter.repository.ProductRepository
 import ru.job4j.counter.service.ProductService
 
@@ -17,13 +16,12 @@ import ru.job4j.counter.service.ProductService
  * @since 04.03.2022
  */
 @ExtendWith(MockitoExtension::class)
-@SpringBootTest
 class ProductServiceTest {
 
-    @MockBean
+    @Mock
     private lateinit var productRepository: ProductRepository
 
-    @Autowired
+    @InjectMocks
     private lateinit var productService: ProductService
 
     @Test
