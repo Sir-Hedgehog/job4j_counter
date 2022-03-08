@@ -1,0 +1,1 @@
+ALTER TABLE products ADD category_id INT NOT NULL DEFAULT 1 REFERENCES categories(id);

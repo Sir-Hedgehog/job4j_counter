@@ -8,21 +8,26 @@ import javax.validation.Valid
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
- * @version 1.0
- * @since 04.03.2022
+ * @version 2.0
+ * @since 08.03.2022
  */
 @RestController
-@RequestMapping("/counter")
-class HtmlController(private val service: ProductService) {
-    val log = Logger.getLogger(HtmlController::class.java.name)
+@RequestMapping("/products")
+class Controller(private val service: ProductService) {
+    val log = Logger.getLogger(Controller::class.java.name)
 
-    @PostMapping("/new_product")
+    @PostMapping("/new")
     fun saveNewProduct(@Valid @RequestBody product: Product): Product {
         return service.saveProduct(product)
     }
 
-    @PostMapping("/sum")
+    @PostMapping("/count")
     fun countCalories(@RequestBody products: Map<String, Int>): Int {
         return service.countCalories(products)
+    }
+
+    @PostMapping("/all")
+    fun countCalories(): List<Product> {
+        return service.getAllProducts()
     }
 }
