@@ -7,9 +7,6 @@ plugins {
     kotlin("plugin.spring") version "1.6.10"
     kotlin("plugin.jpa") version "1.6.10"
     kotlin("plugin.allopen") version "1.6.10"
-    kotlin("kapt") version "1.6.10"
-    kotlin("plugin.lombok") version "1.6.10"
-    id("io.freefair.lombok") version "5.3.0"
 }
 
 group = "ru.job4j"
