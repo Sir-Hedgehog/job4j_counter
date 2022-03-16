@@ -7,8 +7,8 @@ import kotlin.math.roundToInt
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
- * @version 2.0
- * @since 08.03.2022
+ * @version 2.1
+ * @since 16.03.2022
  */
 @Service
 class ProductService(private val repository: ProductRepository) {
@@ -40,6 +40,6 @@ class ProductService(private val repository: ProductRepository) {
      * @return - все продукты, сохраненные в базе
      */
     fun getAllProducts(): List<Product> {
-        return repository.getAll()
+        return repository.findAll()
     }
 }

@@ -8,8 +8,8 @@ import javax.validation.Valid
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
- * @version 2.0
- * @since 08.03.2022
+ * @version 2.1
+ * @since 16.03.2022
  */
 @RestController
 @RequestMapping("/products")
@@ -26,8 +26,8 @@ class Controller(private val service: ProductService) {
         return service.countCalories(products)
     }
 
-    @PostMapping("/all")
-    fun countCalories(): List<Product> {
+    @GetMapping("/all")
+    fun getAllProducts(): List<Product> {
         return service.getAllProducts()
     }
 }
