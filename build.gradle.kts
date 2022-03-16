@@ -42,10 +42,11 @@ allOpen {
     annotation("javax.persistence.MappedSuperclass")
 }
 
-tasks.test {
-    useJUnitPlatform()
-}
-
 tasks.withType<KotlinCompile>() {
     kotlinOptions.jvmTarget = "15"
+}
+
+extensions.findByName("buildScan")?.withGroovyBuilder {
+    setProperty("termsOfServiceUrl", "https://gradle.com/terms-of-service")
+    setProperty("termsOfServiceAgree", "yes")
 }
