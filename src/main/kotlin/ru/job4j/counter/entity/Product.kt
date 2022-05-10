@@ -1,10 +1,9 @@
-package ru.job4j.counter
+package ru.job4j.counter.entity
 
-import ru.job4j.counter.entity.Category
+import lombok.Data
+import ru.job4j.counter.enum.Category
 import javax.persistence.*
 import javax.validation.constraints.NotEmpty
-import javax.validation.constraints.NotNull
-
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
@@ -12,9 +11,23 @@ import javax.validation.constraints.NotNull
  * @since 08.03.2022
  */
 @Entity
+@Data
 @Table(name = "products")
 data class Product(
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Int? = null,
-    @field:NotNull @field:NotEmpty var name: String,
-    @field:NotNull var calories: Int,
-    @ManyToOne @field:NotNull var category: Category)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    var id: Int? = 0,
+
+    @NotEmpty
+    @Column(name = "name")
+    var name: String = "",
+
+    @Column(name = "calories")
+    var calories: Int = 0,
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "category")
+    var category: Category = Category.MILK
+)

@@ -7,7 +7,8 @@ import org.mockito.InjectMocks
 import org.mockito.Mock
 import org.mockito.junit.jupiter.MockitoExtension
 import org.mockito.kotlin.given
-import ru.job4j.counter.entity.Category
+import ru.job4j.counter.entity.Product
+import ru.job4j.counter.enum.Category
 import ru.job4j.counter.repository.ProductRepository
 import ru.job4j.counter.service.ProductService
 
@@ -29,9 +30,13 @@ class ProductServiceTest {
     fun `Count calories`() {
         val products = mapOf("Слива" to 200, "Перец" to 50, "Хурма" to 150)
 
-        given(productRepository.findByName("слива")).willReturn(Product(1, "слива", 49, Category(8, "фрукты")))
-        given(productRepository.findByName("перец")).willReturn(Product(2, "перец", 26, Category(6, "овощи и зелень")))
-        given(productRepository.findByName("хурма")).willReturn(Product(3, "хурма", 67, Category(8, "фрукты")))
+        val first = Product(1, "слива", 49, Category.FRUITS)
+        val second = Product(2, "перец", 26, Category.VEGETABLES_AND_GREEN)
+        val third = Product(3, "хурма", 67, Category.FRUITS)
+
+        given(productRepository.findByName("слива")).willReturn(first)
+        given(productRepository.findByName("перец")).willReturn(second)
+        given(productRepository.findByName("хурма")).willReturn(third)
 
         val expected = 212
         assertEquals(expected, productService.countCalories(products))

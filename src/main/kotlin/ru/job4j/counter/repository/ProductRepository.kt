@@ -1,7 +1,7 @@
 package ru.job4j.counter.repository
 
 import org.springframework.data.repository.CrudRepository
-import ru.job4j.counter.Product
+import ru.job4j.counter.entity.Product
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)

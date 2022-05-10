@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     kotlin("jvm") version "1.6.10"
     id("org.springframework.boot") version "2.4.4"
@@ -7,6 +5,8 @@ plugins {
     kotlin("plugin.spring") version "1.6.10"
     kotlin("plugin.jpa") version "1.6.10"
     kotlin("plugin.allopen") version "1.6.10"
+    kotlin("plugin.lombok") version "1.6.10"
+    id("io.freefair.lombok") version "5.3.0"
 }
 
 group = "ru.job4j"
@@ -18,7 +18,7 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("org.springframework.boot:spring-boot-starter-mustache")
+    implementation("org.springframework.boot:spring-boot-starter-freemarker")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
     implementation("org.liquibase:liquibase-core")
@@ -34,16 +34,6 @@ dependencies {
         exclude(module = "mockito-core")
     }
     testImplementation("org.mockito.kotlin:mockito-kotlin:3.2.0")
-}
-
-allOpen {
-    annotation("javax.persistence.Entity")
-    annotation("javax.persistence.Embeddable")
-    annotation("javax.persistence.MappedSuperclass")
-}
-
-tasks.withType<KotlinCompile>() {
-    kotlinOptions.jvmTarget = "15"
 }
 
 extensions.findByName("buildScan")?.withGroovyBuilder {

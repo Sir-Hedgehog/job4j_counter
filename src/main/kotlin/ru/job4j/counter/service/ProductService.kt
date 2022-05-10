@@ -1,7 +1,7 @@
 package ru.job4j.counter.service
 
 import org.springframework.stereotype.Service
-import ru.job4j.counter.Product
+import ru.job4j.counter.entity.Product
 import ru.job4j.counter.repository.ProductRepository
 import kotlin.math.roundToInt
 
