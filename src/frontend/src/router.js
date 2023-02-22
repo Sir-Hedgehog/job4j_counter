@@ -1,0 +1,26 @@
+import { createWebHistory, createRouter } from "vue-router"
+
+const routes =  [
+    {
+        path: "/products/all",
+        name: "products",
+        component: () => import("./components/AllProducts")
+    },
+    {
+        path: "/products/new",
+        name: "new",
+        component: () => import("./components/NewProduct")
+    },
+    {
+        path: "/products/count",
+        name: "count",
+        component: () => import("./components/ProductsBasket")
+    },
+]
+
+const router = createRouter({
+    history: createWebHistory(),
+    routes,
+})
+
+export default router

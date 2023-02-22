@@ -7,8 +7,8 @@ import kotlin.math.roundToInt
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
- * @version 2.1
- * @since 16.03.2022
+ * @version 2.2
+ * @since 22.02.2023
  */
 @Service
 class ProductService(private val repository: ProductRepository) {
@@ -29,6 +29,9 @@ class ProductService(private val repository: ProductRepository) {
      * @return - количество калорий
      */
     fun countCalories(products: Map<String, Int>): Int {
+        if (products.isEmpty()) {
+            return 0
+        }
         return products
             .map { repository.findByName(it.key.lowercase()).calories * it.value * 0.01 }
             .reduce { sum, element -> sum + element }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <include file="../1_create_table_of_products.sql" relativeToChangelogFile="true"/>
+    <include file="../2_insert_basic_products.sql" relativeToChangelogFile="true"/>
+    <include file="../3_create_table_of_categories.sql" relativeToChangelogFile="true"/>
+    <include file="../4_insert_categories_at_the_table_of_categories.sql" relativeToChangelogFile="true"/>
+    <include file="../5_alter_table_of_products_to_link_categories.sql" relativeToChangelogFile="true"/>
+    <include file="../6_update_table_of_products_for_categories.sql" relativeToChangelogFile="true"/>
+    <include file="../7_move_table_of_categories_to_enum.sql" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>
