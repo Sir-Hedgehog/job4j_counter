@@ -21,6 +21,8 @@ This project contains basic tests (JUnit5, Mockito) for this webapp yet. So you 
 
 ## Used technologies
 * Kotlin;
+* JavaScript;
+* Vue.js 3;
 * PostgreSQL;
 * Liquibase;
 * Spring Boot;
