@@ -10,7 +10,7 @@
       <button @click="countCalories()" class="">Посчитать калории</button>
   </div>
   <div v-else>
-    <h4>Количество калорий за сегодня: {{ this.result }}</h4>
+    <h4>Количество потребленных калорий: {{ this.result }}</h4>
     <h6><router-link to="/products/all">Вернуться на главную</router-link></h6>
   </div>
 </template>
@@ -38,7 +38,7 @@
         })
       },
       updateProductMap(product, calories) {
-        if (calories != null && calories !== "" && calories !== undefined && calories !== 0) {
+        if (calories != null && calories !== "" && calories !== undefined) {
           this.current_map.set(product, calories)
           return this.current_map.get(product)
         }

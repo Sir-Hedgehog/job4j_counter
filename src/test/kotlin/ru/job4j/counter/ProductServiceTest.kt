@@ -33,9 +33,9 @@ class ProductServiceTest {
         val second = Product(2, "перец", 26, "овощи и зелень")
         val third = Product(3, "хурма", 67, "фрукты")
 
-        given(productRepository.findByName("слива")).willReturn(first)
-        given(productRepository.findByName("перец")).willReturn(second)
-        given(productRepository.findByName("хурма")).willReturn(third)
+        given(productRepository.getByName("слива")).willReturn(first)
+        given(productRepository.getByName("перец")).willReturn(second)
+        given(productRepository.getByName("хурма")).willReturn(third)
 
         val expected = 212
         assertEquals(expected, productService.countCalories(products))

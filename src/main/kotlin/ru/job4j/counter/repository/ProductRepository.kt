@@ -10,6 +10,7 @@ import ru.job4j.counter.entity.Product
  */
 interface ProductRepository : CrudRepository<Product, Long> {
     fun save(product: Product): Product
-    fun findByName(name: String): Product
+    fun getByName(name: String): Product
+    fun findByName(name: String): Product?
     override fun findAll(): List<Product>
 }

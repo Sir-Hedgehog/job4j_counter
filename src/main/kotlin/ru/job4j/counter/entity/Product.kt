@@ -17,18 +17,18 @@ import javax.validation.constraints.NotNull
 data class Product(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotEmpty
     var id: Int,
 
     @Column(name = "name")
+    @field:NotEmpty(message = "Введите наименование товара")
     var name: String,
 
     @Column(name = "calories")
-    @NotNull(message = "Введите данных о количестве калорий")
-    @Min(value = 0, message = "Количество потребленных калорий не может быть ниже 0")
+    @field:NotNull(message = "Введите данные о количестве калорий")
+    @field:Min(value = 0, message = "Количество потребленных калорий не может быть ниже 0")
     var calories: Int,
 
     @Column(name = "category")
-    @NotEmpty
+    @field:NotEmpty(message = "Выберите категорию товара")
     var category: String
 )

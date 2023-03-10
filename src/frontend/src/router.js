@@ -16,6 +16,11 @@ const routes =  [
         name: "count",
         component: () => import("./components/ProductsBasket")
     },
+    {
+        path: "/products/check",
+        name: "check",
+        component: () => import("./components/NewProduct")
+    }
 ]
 
 const router = createRouter({
