@@ -8,8 +8,8 @@ import javax.validation.Valid
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
- * @version 3.2
- * @since 22.02.2023
+ * @version 4.2
+ * @since 10.03.2023
  */
 @RestController
 @RequestMapping("/products")

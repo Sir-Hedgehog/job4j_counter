@@ -8,8 +8,8 @@ import kotlin.math.roundToInt
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
- * @version 2.2
- * @since 22.02.2023
+ * @version 3.2
+ * @since 10.03.2023
  */
 @Service
 class ProductService(private val repository: ProductRepository) {

@@ -8,8 +8,8 @@ import javax.validation.constraints.NotNull
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
- * @version 2.1
- * @since 22.02.2023
+ * @version 3.1
+ * @since 10.03.2023
  */
 @Entity
 @Data
