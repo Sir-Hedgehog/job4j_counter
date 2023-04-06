@@ -1,4 +1,4 @@
-package ru.job4j.counter
+package ru.job4j.counter.configuration
 
 import org.springframework.context.annotation.Configuration
 
