@@ -10,7 +10,7 @@
   <router-view/>
   <div>
     <div class="counter">
-      <span class="counter_text">{{ count }}</span>
+      <span class="counter_text">{{ count() }}</span>
     </div>
     <router-link class="basket_counter" to="/products/count">
       <img class="cart" :src="cart" alt="cart">
