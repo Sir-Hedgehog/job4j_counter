@@ -148,5 +148,6 @@ export default {
     border-radius: 0 0 7px 7px;
     color: white;
     background-color: #fc9d03;
+    transition: 0.3s;
   }
 </style>

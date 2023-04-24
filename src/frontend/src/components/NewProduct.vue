@@ -2,7 +2,7 @@
   <div class="data">
     <div v-if="!submitted">
       <Form @submit="saveProduct" :validation-schema="schema" v-slot="{ errors }">
-        <span v-if="!checkProduct">Данный продукт уже есть в базе! Вы можете его найти в главной странице приложения.</span>
+        <span class="yet" v-if="!checkProduct">Данный продукт уже есть в базе! Вы можете найти его на главной странице приложения.</span>
         <div class="form-group">
           <Field name="name" type="text" class="input-group" id="name" :class="{ 'is-invalid': errors.name }" placeholder="Наименование"/>
           <div class="error">{{ errors.name }}</div>
@@ -109,6 +109,7 @@
     padding: 6px 0;
     text-align: left;
     width: 400px;
+    margin: 0 auto;
   }
 
   .input-group {
@@ -152,6 +153,7 @@
     border-radius: 10px;
     color: white;
     background-color: #fc9d03;
+    transition: 0.3s;
   }
 
   h4 {
@@ -160,5 +162,11 @@
 
   h6 {
     color: black;
+  }
+
+  .yet {
+    color: red;
+    display: inline-block;
+    padding: 10px 0;
   }
 </style>

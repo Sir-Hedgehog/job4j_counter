@@ -130,6 +130,7 @@
     border-radius: 10px;
     color: white;
     background-color: #fc9d03;
+    transition: 0.3s;
   }
 
   .empty_basket {
