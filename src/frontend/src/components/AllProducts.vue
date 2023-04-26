@@ -97,7 +97,7 @@ export default {
   }
 
   ul {
-    padding-left: 0;
+    padding-left: 0 !important;
   }
 
   li {
