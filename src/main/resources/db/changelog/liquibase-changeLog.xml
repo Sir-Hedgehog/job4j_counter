@@ -10,6 +10,5 @@
     <include file="../4_insert_categories_at_the_table_of_categories.sql" relativeToChangelogFile="true"/>
     <include file="../5_alter_table_of_products_to_link_categories.sql" relativeToChangelogFile="true"/>
     <include file="../6_update_table_of_products_for_categories.sql" relativeToChangelogFile="true"/>
-    <include file="../7_move_table_of_categories_to_enum.sql" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
