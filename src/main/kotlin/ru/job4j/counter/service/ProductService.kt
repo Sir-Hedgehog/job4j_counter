@@ -3,13 +3,12 @@ package ru.job4j.counter.service
 import org.springframework.stereotype.Service
 import ru.job4j.counter.entity.Product
 import ru.job4j.counter.repository.ProductRepository
-import ru.job4j.counter.utils.Utils
 import kotlin.math.roundToInt
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
- * @version 4.2
- * @since 13.03.2023
+ * @version 4.3
+ * @since 21.07.2023
  */
 @Service
 class ProductService(private val repository: ProductRepository) {
@@ -19,7 +18,7 @@ class ProductService(private val repository: ProductRepository) {
      * @return сохраненный продукт
      */
     fun saveProduct(product: Product): Product {
-        product.name = Utils.castToOneType(product.name)
+        product.name = product.name.castToOneType()
         return repository.save(product)
     }
 
@@ -51,7 +50,7 @@ class ProductService(private val repository: ProductRepository) {
      * @return найден ли продукт в базе
      */
     fun checkProductByName(productName: String): Boolean {
-        val normalizedName = Utils.castToOneType(productName)
+        val normalizedName = productName.castToOneType()
         val words: List<String> = normalizedName.split(" ")
         return findByNameUsingPermutations(words)
     }
@@ -88,5 +87,12 @@ class ProductService(private val repository: ProductRepository) {
             }
         }
         return result
+    }
+
+    /**
+     * Метод приводит имя продукта к одному типу
+     */
+    fun String.castToOneType(): String {
+        return this.lowercase().trim().replace("ё", "е")
     }
 }
