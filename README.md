@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.com/Sir-Hedgehog/job4j_counter.svg?branch=master)](https://travis-ci.org/Sir-Hedgehog/job4j_counter)
 
-# Web application job4j_counter
-This web application job4j_counter realizes the counter of calories with using of principle of MVC (model-view-controller).
+# Application job4j_counter
+This application job4j_counter realizes the counter of calories using MVC principle (model-view-controller).
 
 ## Basic scheme of app
 ![MVC](https://javabeat.net/wp-content/uploads/2014/02/model-1-arch.jpg)
