@@ -8,19 +8,23 @@ import org.mockito.Mock
 import org.mockito.junit.jupiter.MockitoExtension
 import org.mockito.kotlin.given
 import ru.job4j.counter.entity.Product
+import ru.job4j.counter.repository.ProductCheckRepository
 import ru.job4j.counter.repository.ProductRepository
 import ru.job4j.counter.service.ProductService
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
- * @version 2.1
- * @since 22.02.2023
+ * @version 2.2
+ * @since 12.09.2023
  */
 @ExtendWith(MockitoExtension::class)
 class ProductServiceTest {
 
     @Mock
     private lateinit var productRepository: ProductRepository
+
+    @Mock
+    private lateinit var productCheckRepository: ProductCheckRepository
 
     @InjectMocks
     private lateinit var productService: ProductService
@@ -29,9 +33,9 @@ class ProductServiceTest {
     fun `Count calories`() {
         val products = mapOf("Слива" to 200, "Перец" to 50, "Хурма" to 150)
 
-        val first = Product(1, "слива", 49, "фрукты")
-        val second = Product(2, "перец", 26, "овощи и зелень")
-        val third = Product(3, "хурма", 67, "фрукты")
+        val first = Product.id(1).name("слива").calories(49).category("фрукты").build()
+        val second = Product.id(2).name("перец").calories(26).category("овощи и зелень").build()
+        val third = Product.id(3).name("хурма").calories(67).category("фрукты").build()
 
         given(productRepository.getByName("слива")).willReturn(first)
         given(productRepository.getByName("перец")).willReturn(second)
