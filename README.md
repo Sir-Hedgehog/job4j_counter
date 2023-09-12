@@ -7,32 +7,34 @@ This web application job4j_counter realizes the counter of calories with using o
 ![MVC](https://javabeat.net/wp-content/uploads/2014/02/model-1-arch.jpg)
 
 ## Use case
-This app can be pushed and used with any development environment that supports Kotlin (IntellijIDEA, others), server container (tomcat, glassfish, others) and postman.
+1) This app can be pushed and used with any development environment that supports Kotlin (IntellijIDEA, others), server container (tomcat, glassfish, others) and postman.
+2) Use project [job4j_counter_web](https://github.com/Sir-Hedgehog/job4j_counter_web), which contains frontend part of this project.
 
 ## Steps of work
-After you pushed webapp, you can use it with help postman. Steps of work are next:
 
-I. Add new product;
+1) Choose products from list; 
 
-II. Send map of products with its weight;
+2) Send map of products with its weights;
+
+3) Add new product;
 
 ## Testing
-This project contains basic tests (JUnit5, Mockito) for this webapp yet. So you can check it.
+This project contains basic tests (JUnit, Mockito) for this webapp yet. So you can check it.
 
 ## Used technologies
 * Kotlin;
-* JavaScript;
-* Vue.js 3;
 * PostgreSQL;
 * Liquibase;
 * Spring Boot;
 * Spring MVC;
 * Spring Web;
 * Spring Data JPA;
-* Spring MVC;
 * Spring Validation;
+* Hibernate Search (Lucene);
+* Lombok;
+* Gradle;
 * Mockito;
-* JUnit 5;
+* JUnit;
 * Apache Tomcat Server
 
 ## Author
