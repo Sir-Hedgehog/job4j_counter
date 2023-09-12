@@ -23,7 +23,7 @@ class ProductService(private val repository: ProductRepository, private val prod
      */
     fun saveProduct(product: Product): Product {
         product.name = product.name.castToOneType()
-        return repository.save(product)
+        return repository save product
     }
 
     /**
