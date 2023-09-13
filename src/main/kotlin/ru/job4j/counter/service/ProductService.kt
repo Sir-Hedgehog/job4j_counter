@@ -1,21 +1,20 @@
 package ru.job4j.counter.service
 
 import org.springframework.stereotype.Service
-import org.springframework.util.CollectionUtils
 import ru.job4j.counter.entity.Product
 import ru.job4j.counter.repository.ProductRepository
-import ru.job4j.counter.repository.ProductCheckRepository
+import ru.job4j.counter.repository.ProductFullTextRepository
 import javax.transaction.Transactional
 import kotlin.math.roundToInt
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
- * @version 4.4
+ * @version 4.5
  * @since 12.09.2023
  */
 @Service
 @Transactional
-class ProductService(private val repository: ProductRepository, private val productCheckRepository: ProductCheckRepository) {
+class ProductService(private val repository: ProductRepository, private val productFullTextRepository: ProductFullTextRepository) {
     /**
      * Метод сохраняет новый продукт
      * @param product новый продукт
@@ -54,11 +53,8 @@ class ProductService(private val repository: ProductRepository, private val prod
      * @return найден ли продукт в базе
      */
     fun checkProductByName(productName: String): Boolean {
-        val products: List<Product> = productCheckRepository searchProducts productName.castToOneType()
-        if (CollectionUtils.isEmpty(products)) {
-            return false
-        }
-        return true
+        val products = productFullTextRepository.searchProducts(productName.castToOneType())
+        return products.isEmpty()
     }
 
     /**

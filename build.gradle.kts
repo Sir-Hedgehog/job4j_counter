@@ -20,7 +20,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
-    implementation ("org.springframework.boot:spring-boot-starter-validation")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.hibernate:hibernate-search-orm:5.11.12.Final")
     implementation("org.hibernate:hibernate-core:5.6.15.Final")
     implementation("org.liquibase:liquibase-core:4.10.0")
