@@ -54,7 +54,7 @@ class ProductService(private val repository: ProductRepository, private val prod
      */
     fun checkProductByName(productName: String): Boolean {
         val products = productFullTextRepository.searchProducts(productName.castToOneType())
-        return products.isEmpty()
+        return products.isNotEmpty()
     }
 
     /**
